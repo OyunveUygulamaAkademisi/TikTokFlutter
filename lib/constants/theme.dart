@@ -102,7 +102,7 @@ class ThemeConst {
         fontStyle: FontStyle.normal,
       ),
       headline6: GoogleFonts.lato(
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 12,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
@@ -152,37 +152,37 @@ class ThemeConst {
     ),
     primaryTextTheme: TextTheme(
       headline1: GoogleFonts.lato(
-        color: Color(0xb3ffffff),
+        color: Colors.black,
         fontSize: 40,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
       ),
       headline2: GoogleFonts.lato(
-        color: Color(0xb3ffffff),
+        color: Colors.black,
         fontSize: 28,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
       ),
       headline3: GoogleFonts.lato(
-        color: Color(0xb3ffffff),
+        color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
       ),
       headline4: GoogleFonts.lato(
-        color: Color(0xb3ffffff),
+        color: Colors.black,
         fontSize: 18,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
       ),
       headline5: GoogleFonts.lato(
-        color: Color(0xffffffff),
+        color: Colors.black,
         fontSize: 14,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
       ),
       headline6: GoogleFonts.lato(
-        color: Color(0xffffffff),
+        color: Colors.black,
         fontSize: 12,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,

@@ -25,13 +25,15 @@ dependencies:
 
   #STATE_MANAGEMENT
   stacked: ^3.0.0
+  stacked_services: ^0.9.8
 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  build_runner: 
+  stacked_generator:
   flutter_lints: ^2.0.0
 
 

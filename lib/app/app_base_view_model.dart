@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+import 'package:tiktok_flutter/di/locator.dart';
 
 class AppBaseViewMode extends BaseViewModel {
+  final NavigationService navigationService = locator<NavigationService>();
   ThemeMode theme = ThemeMode.dark;
   init() {}
 
@@ -11,6 +14,6 @@ class AppBaseViewMode extends BaseViewModel {
     } else {
       theme = ThemeMode.dark;
     }
-    notifyListeners();
+    locator<AppBaseViewMode>().notifyListeners();
   }
 }
