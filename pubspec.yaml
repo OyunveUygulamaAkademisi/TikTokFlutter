@@ -17,8 +17,12 @@ dependencies:
   #UI
   google_fonts: ^3.0.1
   cupertino_icons: ^1.0.5
+  webview_flutter: ^3.0.4
 
   #FIREBASE
+  firebase_core: ^2.3.0
+  firebase_auth: ^4.1.4
+  cloud_firestore: ^4.1.0
 
   #DI
   get_it: ^7.2.0
@@ -26,8 +30,6 @@ dependencies:
   #STATE_MANAGEMENT
   stacked: ^3.0.0
   stacked_services: ^0.9.8
-
-
 
 dev_dependencies:
   flutter_test:

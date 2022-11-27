@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const FIRESTORE_PATH = "";
+  static const FIRESTORE_VIDEOS_PATH = "videos";
 
   ApiConstants._();
 }

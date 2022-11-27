@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:tiktok_flutter/app/app.router.dart';
+
 import 'package:tiktok_flutter/app/app_base_view_model.dart';
 import 'package:tiktok_flutter/di/locator.dart';
 import 'package:tiktok_flutter/ui/home/home_view_model.dart';
+import 'package:tiktok_flutter/widgets/my_action_item.dart';
+import 'package:tiktok_flutter/widgets/video_widget.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -13,31 +15,29 @@ class HomeView extends StatelessWidget {
         onModelReady: (model) => model.init(),
         builder: (context, model, child) => Scaffold(
               appBar: AppBar(
+                title: Text(
+                  "TikTok Flutter",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
                 actions: [
-                  IconButton(
-                      onPressed: () {
-                        locator<AppBaseViewMode>().changeTheme();
-                      },
-                      icon: locator<AppBaseViewMode>().theme == ThemeMode.light
-                          ? Icon(Icons.dark_mode)
-                          : Icon(Icons.light_mode))
+                  MyActionWidget(onPressed: () {
+                    locator<AppBaseViewMode>().changeTheme();
+                  })
                 ],
               ),
-              body: Container(
-                child: Center(
-                    child: Column(
-                  children: [
-                    TextButton(
-                        onPressed: () {
-                          model.navigationService.navigateTo(Routes.detailView);
+              body: SingleChildScrollView(
+                child: model.videos == null
+                    ? SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        child: const Center(child: CircularProgressIndicator()))
+                    : ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: model.videos!.length,
+                        itemBuilder: (context, index) {
+                          return VideoWidget(video: model.videos![index]);
                         },
-                        child: Text("Go to Detail Page")),
-                    Text(
-                      "Hello from TikTok App",
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                  ],
-                )),
+                      ),
               ),
             ));
   }
