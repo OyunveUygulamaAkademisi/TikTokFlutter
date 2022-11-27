@@ -8,20 +8,21 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i5;
-import 'package:tiktok_flutter/ui/detail/detail_view.dart' as _i3;
 import 'package:tiktok_flutter/ui/home/home_view.dart' as _i2;
+import 'package:tiktok_flutter/ui/no_connection_view/no_connection_view.dart'
+    as _i3;
 import 'package:tiktok_flutter/ui/splash/splash_view.dart' as _i4;
 
 class Routes {
   static const homeView = '/home-view';
 
-  static const detailView = '/detail-view';
+  static const noConnectionView = '/no-connection-view';
 
   static const splashView = '/';
 
   static const all = <String>{
     homeView,
-    detailView,
+    noConnectionView,
     splashView,
   };
 }
@@ -33,8 +34,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i2.HomeView,
     ),
     _i1.RouteDef(
-      Routes.detailView,
-      page: _i3.DetailView,
+      Routes.noConnectionView,
+      page: _i3.NoConnectionView,
     ),
     _i1.RouteDef(
       Routes.splashView,
@@ -49,9 +50,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i3.DetailView: (data) {
+    _i3.NoConnectionView: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => _i3.DetailView(),
+        builder: (context) => _i3.NoConnectionView(),
         settings: data,
       );
     },
@@ -84,14 +85,14 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToDetailView([
+  Future<dynamic> navigateToNoConnectionView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.detailView,
+    return navigateTo<dynamic>(Routes.noConnectionView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
